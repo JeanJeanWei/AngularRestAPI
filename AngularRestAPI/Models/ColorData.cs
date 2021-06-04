@@ -9,6 +9,6 @@ namespace AngularRestAPI.Models
         public string Hex { get; set; }
         public string Name { get; set; }
         public int Distance { get; set; }
-        public string Style => "backgroundColor: #" + Hex;
+        public string Style => "#" + Hex;
     }
 }

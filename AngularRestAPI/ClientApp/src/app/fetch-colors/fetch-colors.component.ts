@@ -3,8 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-fetch-colors',
-styles: [],
-
+  styles: [],
   templateUrl: './fetch-colors.component.html'
 })
 

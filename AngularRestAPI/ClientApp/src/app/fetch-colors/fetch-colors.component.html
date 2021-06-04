@@ -19,7 +19,7 @@
   <tbody>
       <tr *ngFor="let c of colors">
           <td>{{ c.name }}</td>
-          <td [ngStyle]="{{c.style}}">{{c.style}}</td>
+          <td [ngStyle]="{backgroundColor: c.style}"></td>
           <td>{{ c.red }}</td>
           <td>{{ c.green }}</td>
           <td>{{ c.blue }}</td>
