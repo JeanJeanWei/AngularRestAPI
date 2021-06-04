@@ -19,20 +19,18 @@ namespace AngularRestAPI.Controllers
     public class ColorController : ControllerBase
     {
         private readonly ILogger<ColorController> _logger;
+        IOptions<EnvironmentSettings> _options;
 
         public ColorController(ILogger<ColorController> logger)
         {
             _logger = logger;
         }
 
-        //public ColorController(IOptions<EnvironmentSettings> options)
-        //{
-        //    var env = options.Value.Environment;
-        //}
+       
 
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<ColorData>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [HttpGet]
+        [HttpGet()]
         [Route("allcolordata")]
         public async Task<IActionResult>  AllColorData()
         {
