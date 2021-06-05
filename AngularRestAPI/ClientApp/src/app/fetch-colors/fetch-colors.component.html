@@ -2,29 +2,34 @@
 
 <p>This component demonstrates fetching data from the server asynchronously.</p>
 
+<label>Color Hex code</label>
+<input type="text" (onChange)="UpdateInput()" placeholder='Hexcode' style="margin-right = '10'">
+
+<button class="btn btn-primary" (click)="Fetchdata()">Fine Closest Color Name</button>
+
 <p *ngIf="!colors"><em>Loading...</em></p>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="colors">
-  <thead>
-      <tr>
-          <th>Name</th>
-          <th>Color</th>
-          <th>Red</th>
-          <th>Green</th>
-          <th>Blue</th>
-          <th>Hex</th>
-          <th>Distance</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr *ngFor="let c of colors">
-          <td>{{ c.name }}</td>
-          <td [ngStyle]="{backgroundColor: c.style}"></td>
-          <td>{{ c.red }}</td>
-          <td>{{ c.green }}</td>
-          <td>{{ c.blue }}</td>
-          <td>{{ c.hex }}</td>
-          <td>{{ c.distance }}</td>
-      </tr>
-  </tbody>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Red</th>
+            <th>Green</th>
+            <th>Blue</th>
+            <th>Hex</th>
+            <th>Distance</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of colors">
+            <td>{{ c.name }}</td>
+            <td [ngStyle]="{backgroundColor: c.style}"></td>
+            <td>{{ c.red }}</td>
+            <td>{{ c.green }}</td>
+            <td>{{ c.blue }}</td>
+            <td>{{ c.hex }}</td>
+            <td>{{ c.distance }}</td>
+        </tr>
+    </tbody>
 </table>

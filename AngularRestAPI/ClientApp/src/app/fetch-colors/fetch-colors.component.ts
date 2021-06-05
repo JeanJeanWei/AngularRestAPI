@@ -9,14 +9,21 @@ import { HttpClient } from '@angular/common/http';
 
 export class FetchColorsComponent {
   public colors: ColorDetails[];
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string)
+  public hex: "010101";
+  
+  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string)
   {
-    http.get<ColorDetails[]>(baseUrl + 'color/allcolordata').subscribe(result => {
+    this.Fechdata();
+  }
+  
+
+  public async Fechdata()
+  {
+    this.http.get<ColorDetails[]>(this.baseUrl+'Color/allcolordata').subscribe(result => {
       this.colors = result;
     }, error => console.error(error));
   }
-  async Fechdata()
-  {
+  UpdateInput() {
 
   }
 
