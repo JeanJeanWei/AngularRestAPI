@@ -3,9 +3,18 @@
 <p>This component demonstrates fetching data from the server asynchronously.</p>
 
 <label>Color Hex code</label>
-<input type="text" (onChange)="UpdateInput()" placeholder='Hexcode' style="margin-right = '10'">
+<input type="text" [(ngModel)]="value" placeholder='Hexcode' style="margin-left:auto">
 
-<button class="btn btn-primary" (click)="Fetchdata()">Fine Closest Color Name</button>
+<button class="btn btn-primary" (click)="UpdateInput()">Fine Closest Color Name</button>
+
+<p>{{found_colorName}}</p>
+<label>Found Color</label>
+<label [ngStyle]="{backgroundColor: found_colorHex}">{{found_colorHex}}</label>
+<label>{{found_colorHex}}</label>
+<p></p>
+<label>Your Input Color</label>
+<label [ngStyle]="{backgroundColor: origin_colorHex}">{{origin_colorHex}}</label>
+<label>{{origin_colorHex}}</label>
 
 <p *ngIf="!colors"><em>Loading...</em></p>
 
