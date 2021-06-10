@@ -22,28 +22,28 @@ namespace AngularRestAPI
         {
             services.AddControllersWithViews();
             // register swagger
-            services.AddSwaggerDocument();
-            //services.AddSwaggerDocument(config =>
-            //{
-            //    config.PostProcess = document =>
-            //    {
-            //        document.Info.Version = "v1";
-            //        document.Info.Title = "Color API";
-            //        document.Info.Description = "A simple ASP.NET Core web API";
-            //        document.Info.TermsOfService = "None";
-            //        document.Info.Contact = new NSwag.OpenApiContact
-            //        {
-            //            Name = "Jean-Jean Wei",
-            //            Email = string.Empty,
-            //            Url = "https://www.linkedin.com/in/jean-jean-wei-113a7244/"
-            //        };
-            //        //document.Info.License = new NSwag.OpenApiLicense
-            //        //{
-            //        //    Name = "Use under LICX",
-            //        //    Url = "https://example.com/license"
-            //        //};
-            //    };
-            //});
+            
+            services.AddSwaggerDocument(config =>
+            {
+                config.PostProcess = document =>
+                {
+                    document.Info.Version = "v1";
+                    document.Info.Title = "Color API (Backend for Aggular Client)";
+                    document.Info.Description = "A simple ASP.NET Core web API";
+                    document.Info.TermsOfService = "None";
+                    document.Info.Contact = new NSwag.OpenApiContact
+                    {
+                        Name = "Jean-Jean Wei",
+                        Email = string.Empty,
+                        Url = "https://www.linkedin.com/in/jean-jean-wei-113a7244/"
+                    };
+                    //document.Info.License = new NSwag.OpenApiLicense
+                    //{
+                    //    Name = "Use under LICX",
+                    //    Url = "https://example.com/license"
+                    //};
+                };
+            });
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
